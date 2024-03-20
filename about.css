@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+hr{
+    border: none;
+    height: 1px;
+    background-color: rgba(89, 83, 83, 0.286);
+    margin: 2px 0 2px 0; 
+}
+
+.history{
+    padding: 20px;
+    margin-left: 250px;
+    margin-right: 71px;
+    text-align: justify;
+    
+}
+
+.image{
+    width: 304px;
+    border-radius: 50%;
+   margin: auto;
+}
+
+.image img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+h1{
+    margin-bottom: 5px;
+    font-size: 38px;
+}
+
+p{
+    font-size: 20px;
+    margin-bottom: 24px; 
+}
+
+.team h1{
+    text-align: center;
+}
+
+.expert{
+    display: flex;
+}
+
+.card {
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 20%;
+    
+    text-align: center;
+    margin: auto;
+  }
+  
+  /* Add rounded corners to the top left and the top right corner of the image */
+  .card img {
+     border-radius: 50%;
+  }
+
+
+.contact{
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .tag_div {
+        /* flex-direction: column;
+        align-items: flex-start; */
+        width: 80%;
+    }
+
+    .history{
+        margin-left: 0;
+    }
+
+    .image{
+        width: 200px;
+        border-radius: 50%;
+       margin: auto;
+    }
+
+    .logo {
+        width: 6%;
+    }
+    footer img{
+        max-width: 24px;
+        max-height: 25px;
+    }
+    footer a{
+        font-size: 11px;
+    }
+
+    .tags, #tags {
+        margin-bottom: 10px;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        text-align: left;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 6%;
+    }
+
+    .tags, #tags {
+        padding: 8px;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+
+    .contact {
+        margin-bottom: 10px;
+    }
+}

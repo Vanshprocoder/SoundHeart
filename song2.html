@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundHeart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="song1.css">
+    <link rel="shortcut icon" href="headphones-simple-solid.svg" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <div class="logo"><a href="index.html"><img src="headphones-simple-solid.svg" alt="">SoundHeart</a></div>   
+            <li><a href="../index.html"><img src="house-solid.svg"> <span>Home</span></a></li>
+            <li><a href="library.html"><img src="music-solid.svg"> <span>Music Library</span></a></li>
+            <li><a href="about.html"><img src="circle-info-solid.svg"> <span>About</span></a></li>
+            <li><a href="feedback.html"><img src="message-solid.svg"> <span>Feedback</span></a></li>
+        </ul>
+    </nav>
+    <div class="song-container">
+        <div class="poster">
+            <img src="apa-milange(500x500).jpeg" alt="">
+        </div>
+        <div class="controls">
+            <a href="song1.html"><button id="pre"><img src="backward-step-solid.svg" alt=""></button></a>
+            <button id="pause"><img src="pause-solid.svg" alt=""></button>
+            <a href="song3.html"><button id="next"><img src="forward-step-solid.svg" alt=""></button></a>
+            <div class="timer">
+                <input type="range" min="0" max="100" value="0">
+            </div>
+        </div>
+    </div>
+    <nav class="queue-navbar">
+        <ul>   
+            
+            <li><a href="song3.html"><img src="churi.image"> <span>Churi</span></a></li>
+            <li><a href="song4.html"><img src="do-gallan.jpeg"> <span>Do Gallan</span></a></li>
+            <li><a href="song5.html"><img src="pagal.jpeg"> <span>Pagal</span></a></li>
+            <li><a href="song6.html"><img src="rab-wangu.jpeg"> <span>Rab Wangu</span></a></li>
+            <li><a href="song7.html"><img src="soch.jpeg"> <span>Soch</span></a></li>
+        </ul>
+    </nav>
+    <footer style="margin-top: 0;">
+        <div class="contact">
+            <img src="phone-solid.svg" alt="contact">
+            <h4>
+                <a href="https://wa.me/916284716671?text=Hello%20Sound%20Heart,%20I%20Liked%20Your%20website%20and%20I%20am%20Waiting%20for%20some%20new%20songs%20in%20the%20website" target="_blank">
+                    +91 6284716671
+                </a>
+            </h4>
+        </div>
+        
+        <div class="contact">
+            <img src="instagram.svg" alt="social_media">
+            <a href="https://www.instagram.com/vanshbhatia949?igsh=MWdzcXlvZm1paHFnbA=="><h4>@vanshbhatia949</h4></a>
+        </div>
+        
+    </footer>
+    <p class="Copyright" style="text-align: center; font-size: 20px;">&copy SoundHeart 2024</p>
+    <script>
+        // Get references to the audio element and control buttons
+        const audio = new Audio();
+        const preButton = document.getElementById('pre');
+        const pauseButton = document.getElementById('pause');
+        const nextButton = document.getElementById('next');
+        const rangeInput = document.querySelector('.timer input');
+
+        // Set the source of the audio
+        audio.src = 'Apa Fer Milange(PagalWorld.com.cm).mp3';
+
+        audio.play();
+
+        // Event listeners for the control buttons
+        pauseButton.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+            updatePauseButtonIcon();
+        });
+
+        preButton.addEventListener('click', function() {
+            // Code to play previous song
+            // You can implement your logic to play the previous song here
+        });
+
+        nextButton.addEventListener('click', function() {
+            // Code to play next song
+            // You can implement your logic to play the next song here
+        });
+
+        // Update the range input value based on audio current time
+        audio.addEventListener('timeupdate', function() {
+            const currentTime = (audio.currentTime / audio.duration) * 100; // Calculate current time percentage
+            rangeInput.value = currentTime; // Set range input value
+        });
+
+        // Change audio current time when range input value changes
+        rangeInput.addEventListener('input', function() {
+            const seekTime = (audio.duration * (rangeInput.value / 100)); // Calculate seek time
+            audio.currentTime = seekTime; // Set audio current time
+        });
+
+        // Function to update pause button icon based on audio state
+        function updatePauseButtonIcon() {
+            if (audio.paused) {
+                pauseButton.innerHTML = '<img src="play-solid.svg" alt="">';
+            } else {
+                pauseButton.innerHTML = '<img src="pause-solid.svg" alt="">';
+            }
+        }
+
+        // Initial update of pause button icon
+        updatePauseButtonIcon();
+    </script>
+</body>
+</html>
